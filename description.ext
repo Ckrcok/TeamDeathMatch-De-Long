@@ -1,0 +1,46 @@
+class Header
+{
+gameType = TDM;
+minPlayers = 1;
+maxPlayers = 26;
+};
+
+
+
+//___________Respawn_____________________________________
+
+
+respawn = 3;
+respawnDelay = 5;
+respawnDialog = 1;
+respawnTemplatesWest[] = {"EndMission","Counter","ace_spectator"};
+respawnTemplatesEast[] = {"EndMission","Counter","ace_spectator"};
+
+Author = "Mashdor";
+onLoadName = "IsrTG TeamDeathMatch";
+onLoadMission = "<t color='#FF0000'>V e r s i o n    0 . 4<br /><t color='#FCEF06'>Have Fun";
+loadScreen =  "texture\isrtg-logo.paa";
+overviewPicture = "texture\isrtg-logo.paa";
+
+//___________Debriefing_____________________________________
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "ROUND FINISHED";
+		subtitle = "Nice work Guys";
+		description = "You successfully won over the other group";
+		pictureBackground = "texture\isrtg-logo.paa";
+		picture = "b_inf";
+		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
+	};
+};
+
+
+//___________Garbage collactor_________________________________________
+
+corpseManagerMode = 1;
+corpseLimit = 10;
+corpseRemovalMinTime = 200;
+corpseRemovalMaxTime = 900;
