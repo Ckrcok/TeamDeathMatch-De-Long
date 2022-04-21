@@ -18,9 +18,9 @@ respawnTemplatesEast[] = {"EndMission","Counter","ace_spectator"};
 
 Author = "Mashdor";
 onLoadName = "IsrTG TeamDeathMatch";
-onLoadMission = "<t color='#FF0000'>V e r s i o n    0 . 4<br /><t color='#FCEF06'>Have Fun";
-loadScreen =  "texture\isrtg-logo.paa";
-overviewPicture = "texture\isrtg-logo.paa";
+onLoadMission = "<t color='#FF0000'>V e r s i o n    0 . 5 <t color='#FF0011'>BETA<br /><t color='#FCEF06'>Have Fun<br />Created By <t color='#00FF00'>Mashdor</t> For IsrTG"  ;
+loadScreen =  "texture\isrtg-logo.jpg";
+overviewPicture = "texture\isrtg-logo.jpg";
 
 //___________Debriefing_____________________________________
 
@@ -31,11 +31,12 @@ class CfgDebriefing
 		title = "ROUND FINISHED";
 		subtitle = "Nice work Guys";
 		description = "You successfully won over the other group";
-		pictureBackground = "texture\isrtg-logo.paa";
+		pictureBackground = "texture\isrtg-logo.jpg";
 		picture = "b_inf";
 		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
 	};
 };
+
 
 
 //___________Garbage collactor_________________________________________
