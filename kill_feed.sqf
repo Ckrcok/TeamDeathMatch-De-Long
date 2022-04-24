@@ -1,5 +1,5 @@
 disableSerialization;
-systemChat "at killfeed"
+
 
 {
 	_ctrl = (findDisplay 46) displayCtrl _x;
@@ -19,7 +19,12 @@ _ctrl = (findDisplay 46) ctrlCreate ["RscText", _this select 0];
 _ctrl ctrlSetPosition [0.45, 0.7, 0.4, 0.1];
 _ctrl ctrlSetTextColor [1, 0, 0, 1];
 
-_ctrl ctrlSetText ("You killed a " + (getText(configFile >> "CfgVehicles" >> typeOf (_this select 1) >> "displayName")));
+
+_Killed = _this select 1;
+_Killed_name = name _Killed;
+
+_ctrl ctrlSetText ("Killed "+ _Killed_name + " | +1 kill");
+
 
 _ctrl ctrlCommit 0;
 
@@ -31,7 +36,7 @@ _ctrl ctrlCommit 10;
 	disableSerialization;
 	_ctrl = (findDisplay 46) displayCtrl _this;
 	
-	UISleep 10;
+	UISleep 50;
 	
 	ctrlDelete _ctrl;
 	activeControls = activeControls - [_this];	

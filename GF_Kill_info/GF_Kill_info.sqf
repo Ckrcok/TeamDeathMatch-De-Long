@@ -16,7 +16,7 @@
 //________________ Settings ________________
 //________________ Set true or false  ________________
 
-_parsetext_notification			= true;			//	parsetext hint notification
+_parsetext_notification			= false;			//	parsetext hint notification
 _BIS_fnc_dynamicText			= true;			//	BIS_fnc_dynamicText notification
 
 _systemChat_notification		= false;

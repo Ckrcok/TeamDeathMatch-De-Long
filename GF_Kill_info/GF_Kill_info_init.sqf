@@ -28,7 +28,7 @@ or use any other program for editing .
 For the Compilation List of my GF Scripts , you can search in:
 https://forums.bohemia.net/forums/topic/215850-compilation-list-of-my-gf-scripts/
 */
-systemChat "Added killfeedsqf";
+
 player addEventHandler ["Killed",{[control, _this select 0] execVM "kill_feed.sqf";}];
-systemChat "Added GF_Kill_info";
+
 player addEventhandler ["killed",{[[_this select 0,_this select 1],"GF_Kill_info\GF_Kill_info.sqf"] remoteExec ["execVM"];}];
