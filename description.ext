@@ -32,7 +32,7 @@ class CfgDebriefing
 		subtitle = "Nice work Guys";
 		description = "You successfully won over the other group";
 		pictureBackground = "texture\isrtg-logo.jpg";
-		picture = "b_inf";
+		picture = "texture\isrtg-logo.paa";
 		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
 	};
 };
@@ -42,6 +42,6 @@ class CfgDebriefing
 //___________Garbage collactor_________________________________________
 
 corpseManagerMode = 1;
-corpseLimit = 10;
-corpseRemovalMinTime = 200;
-corpseRemovalMaxTime = 900;
+corpseLimit = 2;
+corpseRemovalMinTime = 50;
+corpseRemovalMaxTime = 60;

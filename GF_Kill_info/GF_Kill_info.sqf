@@ -58,7 +58,7 @@ if(isNull _Killer) then {
 	// };
 	if (_BIS_fnc_dynamicText) then {
 	//________________	2. Left Corner up display	________________
-	_BIS_fnc_dynamicText_info = [["%1    K  .  I  .  A  .", _Killed ,safeZoneX,safeZoneY,10,0,0,7016] remoteExec ["BIS_fnc_dynamicText"]];
+	_BIS_fnc_dynamicText_info = [["%1    K  .  I  .  A  .", _Killed ,1080,20,10,0,0,7016] remoteExec ["BIS_fnc_dynamicText"]];
 	};
 
 };
@@ -88,27 +88,16 @@ if(isPlayer _Killer) then {
 			private _Weapon = getText(configFile >> "CfgWeapons" >> currentWeapon (vehicle _Killer) >> "displayname");
 			if(_Weapon != "") then {
 
-		if (_systemChat_notification) then {
-		[format["%1  Killed  %2  from  %3 m  with  %4", _Killer_name,_Killed,floor _Distance,_Weapon]] remoteExec ["systemChat", 0, true];
-		};
-
-		if (_sideChat_notification) then {
-		[[_side_of_sideChat,_identity_of_sideChat],format["%1  Killed  %2  from  %3 m  with  %4", _Killer_name,_Killed,floor _Distance,_Weapon]] remoteExec ["sideChat", 0, true];
-		};
 
 
 		//________________	3. 2 Different notification types	________________
 		_kill_info = format[" <t color='%4'> %2  Killed  <t color='%3'>  %4  <t color='#FFD700'> from   %5 m   with  <t color='#FF0000'> %6 </t>",_pictureweapon,_Killer_name,_Killed_Color,_Killer_Color,_Killed,floor _Distance,_Weapon];
 
-		if (_parsetext_notification) then {
-		//________________	1. Hint parsetext 	________________
-			hintsilent parsetext _kill_info;
-		};
 
 		if (_BIS_fnc_dynamicText) then {
 		//________________	2. Left Corner up display	________________
 			// _BIS_fnc_dynamicText_info=[["<t size='0.5' align='left' with  %4 >" + _kill_info + "</t>",safeZoneX,safeZoneY,10,0,0,7016] remoteExec ["BIS_fnc_dynamicText"]]
-		_BIS_fnc_dynamicText_info=[["<t size='0.5' align='left' with  %4 >" + _kill_info + "</t>",1080,20,60,0,0,100000] remoteExec ["BIS_fnc_dynamicText"]];
+		_BIS_fnc_dynamicText_info=[["<t size='0.5' align='left' with  %4 >" + _kill_info + "</t>",1080,20,60,0,0,0] remoteExec ["BIS_fnc_dynamicText"]];
 		};
 
 
@@ -124,23 +113,13 @@ if(isPlayer _Killer) then {
 			if(_Weapon != "") then {
 
 
-		if (_systemChat_notification) then {
-		[format["%1  Killed  %2  from  %3 m  with  %4  %5", _Killer_name,_Killed,floor _Distance,_Vehicle_Killer,_Weapon]] remoteExec ["systemChat", 0, true];
-		};
 
-		if (_sideChat_notification) then {
-		[[_side_of_sideChat,_identity_of_sideChat],format["%1  Killed  %2  from  %3 m  with  %4  %5", _Killer_name,_Killed,floor _Distance,_Vehicle_Killer,_Weapon]] remoteExec ["sideChat", 0, true];
-		};
 
 // <img size='1' shadow='1' image='%1'/>
 
 		//________________	3. 2 Different notification types	________________
 		_kill_info = format["  %2  Killed <t color='%3'>  %4  <t color='#FFD700'>   from   %5 m   with  <t color='#FF0000'> %6   %7 </t>",_pictureweapon,_Killer_name,_Killed_Color,_Killed,floor _Distance,_Vehicle_Killer,_Weapon];
 
-		if (_parsetext_notification) then {
-		//________________	1. Hint parsetext 	________________
-			hintsilent parsetext _kill_info;
-		};
 
 		if (_BIS_fnc_dynamicText) then {
 		//________________	2. Left Corner up display	________________
@@ -166,18 +145,10 @@ if!(isPlayer _Killer) then {
 	[format["%1  Killed  %2  from  %3 m  with  %4", _Killer_name,_Killed,floor _Distance,_Weapon]] remoteExec ["systemChat", 0, true];
 	};
 
-	if (_sideChat_notification) then {
-	[[_side_of_sideChat,_identity_of_sideChat],format["%1  Killed  %2  from  %3 m  with  %4", _Killer_name,_Killed,floor _Distance,_Weapon]] remoteExec ["sideChat", 0, true];
-	};
-
 
 	//________________	3. 2 Different notification types	________________
 	_kill_info = format["<t color='%4'>  %5  </t>  <img size='1'   transform='-1' shadow='1' image='%1'/>    <t color='%3'> %2 </t> from <t color='#FFD700'>%6 m</t>",_pictureweapon,_Killer_name,_Killer_Color,_Killed_Color,_Killed_name,floor _Distance,_Weapon];
 
-	if (_parsetext_notification) then {
-	//________________	1. Hint parsetext 	________________
-		hintsilent parsetext _kill_info;
-	};
 
 	if (_BIS_fnc_dynamicText) then {
 	//________________	2. Left Corner up display	________________
@@ -196,23 +167,9 @@ if!(isPlayer _Killer) then {
 			_Vehicle_Killer = getText (configFile >> "CfgVehicles" >> typeof (vehicle _Killer) >> "Displayname");
 			if(_Weapon != "") then {
 
-
-	if (_systemChat_notification) then {
-	[format["%1  Killed  %2  from  %3 m  with  %4  %5", _Killer_name,_Killed,floor _Distance,_Vehicle_Killer,_Weapon]] remoteExec ["systemChat", 0, true];
-	};
-
-	if (_sideChat_notification) then {
-	[[_side_of_sideChat,_identity_of_sideChat],format["%1  Killed  %2  from  %3 m  with  %4  %5", _Killer_name,_Killed,floor _Distance,_Vehicle_Killer,_Weapon]] remoteExec ["sideChat", 0, true];
-	};
-
-
 	//________________	3. 2 Different notification types	________________
 	_kill_info = format["<img size='1' shadow='1' image='%1'/>  %2  Killed <t color='%3'>  %4  <t color='#FFD700'> from   %5 m   with  <t color='#FF0000'> %6   %7 </t>",_pictureweapon,_Killer_name,_Killed_Color,_Killed,floor _Distance,_Vehicle_Killer,_Weapon];
 
-	if (_parsetext_notification) then {
-	//________________	1. Hint parsetext 	________________
-		hintsilent parsetext _kill_info;
-	};
 
 	if (_BIS_fnc_dynamicText) then {
 	//________________	2. Left Corner up display	________________

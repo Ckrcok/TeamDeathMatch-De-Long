@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=154;
+		nextID=166;
 	};
 	class Camera
 	{
-		pos[]={4499.8389,23.304268,2206.5042};
-		dir[]={0.81300539,-0.25169805,0.52510381};
-		up[]={0.21146137,0.96779817,0.13657849};
-		aside[]={0.54257023,6.9383532e-007,-0.84004492};
+		pos[]={4625.1538,75.666817,2200.2686};
+		dir[]={0.071278743,-0.63148093,0.77210832};
+		up[]={0.058049608,0.7753914,0.62880719};
+		aside[]={0.99576592,0,-0.091926143};
 	};
 };
 binarizationWanted=0;
@@ -625,7 +625,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -960,7 +960,7 @@ class CustomAttributes
 		};
 		nAttributes=6;
 	};
-	class Category2
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -7028,11 +7028,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4644.3423,21.175858,2232.697};
-						angles[]={0,6.207777,0};
+						position[]={4644.3418,21.175438,2232.697};
+						angles[]={0,6.2077694,0};
 					};
 					side="West";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						isPlayable=1;
@@ -7159,6 +7159,7 @@ class Mission
 					};
 					id=908;
 					type="rhsusf_socom_marsoc_spotter";
+					atlOffset=16.174;
 					class CustomAttributes
 					{
 						class Attribute0

@@ -4,9 +4,8 @@ waitUntil {player == player};
 
 enableSaving [false, false];
 
-//Ends the mission when West or East have scored more than X - in this case 2
-//Credit to Stapo for Ultimate Team Deathmatch code
-systemChat "systemChat";
+
+
 activeControls = [];
 control = 2000;
 
@@ -16,6 +15,18 @@ EAST addScoreSide  0;
 
 []execVM "GF_Kill_info\GF_Kill_info.sqf";
 
+player addEventHandler ["Killed",{
+	unit = _this select 0 ;
+	killer = _this select 1;
+	if (!isServer) then {
+	hint "is server";	
+	[[control, unit, killer], "kill_feed.sqf" ] call BIS_fnc_execVM;
+	}else{
+	hint "is not server";
+	[control, unit, killer] execVM "kill_feed.sqf";
+	};
+	
+}];
 
 _endmission = false;
 while {NOT _endmission} do {
